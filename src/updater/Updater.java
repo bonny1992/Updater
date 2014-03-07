@@ -6,6 +6,10 @@
 
 package updater;
 import java.util.HashMap;
+import java.io.*;
+import java.net.*;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 /**
  *
  * @author Bonny
@@ -30,10 +34,20 @@ public class Updater {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    
+    private static void Downloader(String value, String path) throws MalformedURLException, IOException
+    {
+        URL website = new URL("http://www.yourwebsite.com/path/to/"+value);
+        ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+        FileOutputStream fos = new FileOutputStream(value);
+        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+    }
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
         Dictionary dizionario = new Dictionary();
         /*
+        
+        
         Here it goes your dictionary declaration.
         Usage:
         dizionario.Dictionary("Test_1","Result_Test_1");
@@ -49,11 +63,11 @@ public class Updater {
         dizionario.Dictionary("Test_4","Result_Test_4"); //
         dizionario.Dictionary("Test_5","Result_Test_5"); //
         
-        String prova = new String();
-        prova = "";
+        String arg_dictionary = new String();
+        arg_dictionary = "";
         if (args.length > 0) 
-            prova = dizionario.ReturnHashMap(args[0]).toString();
-        System.out.println(prova);
+            arg_dictionary = dizionario.ReturnHashMap(args[0]).toString();
+        Downloader(arg_dictionary, "");
     }
     
 }
