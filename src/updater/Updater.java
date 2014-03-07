@@ -33,11 +33,22 @@ public class Updater {
     public static void main(String[] args) {
         // TODO code application logic here
         Dictionary dizionario = new Dictionary();
-        dizionario.Dictionary("Prova1","ResProva1");
-        dizionario.Dictionary("Prova2","ResProva2");
-        dizionario.Dictionary("Prova3","ResProva3");
-        dizionario.Dictionary("Prova4","ResProva4");
-        dizionario.Dictionary("Prova5","ResProva5");
+        /*
+        Here it goes your dictionary declaration.
+        Usage:
+        dizionario.Dictionary("Test_1","Result_Test_1");
+        dizionario.Dictionary("Test_2","Result_Test_2");
+        dizionario.Dictionary("Test_3","Result_Test_3");
+        dizionario.Dictionary("Test_4","Result_Test_4");
+        dizionario.Dictionary("Test_5","Result_Test_5");
+        */
+        
+        dizionario.Dictionary("Test_1","Result_Test_1"); //
+        dizionario.Dictionary("Test_2","Result_Test_2"); //
+        dizionario.Dictionary("Test_3","Result_Test_3"); // There are for testing purposes
+        dizionario.Dictionary("Test_4","Result_Test_4"); //
+        dizionario.Dictionary("Test_5","Result_Test_5"); //
+        
         String prova = new String();
         prova = "";
         if (args.length > 0) 
